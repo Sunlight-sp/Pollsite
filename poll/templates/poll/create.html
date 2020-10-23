@@ -1,0 +1,66 @@
+{% extends 'poll/base.html' %}
+
+{% block nav_btn1 %}
+<a href="{% url 'home' %}"  type="button" class="btn btn-outline-light">home</a>
+{% endblock nav_btn1 %}
+
+{% block title %}
+    Create
+{% endblock title %}
+
+
+{% block main %}
+
+
+
+<div class="container my-4">
+
+            <div><h3 >Create A New Poll</h3></div>
+
+
+            <form action="/create/" method="POST">
+                {% csrf_token %}
+
+                    <div class="row mt-2">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="question">Enter Poll Question</label>
+                                <input type="text" class="form-control" id="question" name="question" placeholder="eg. your favourite language">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="option1">Option 1</label>
+                                <input type="text" class="form-control" id="option1" name="option1" placeholder="eg. python">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="option2">Option 2</label>
+                                <input type="text" class="form-control" id="option2" name="option2" placeholder="eg. java">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="option3">Option 3</label>
+                                <input type="text" class="form-control" id="option3" name="option3" placeholder="eg. c++">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                <center><button type="submit" class="btn btn-info">Submit</button></center>
+
+            </form>
+
+</div>
+
+{% endblock main %}

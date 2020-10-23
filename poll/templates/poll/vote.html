@@ -1,0 +1,29 @@
+{% extends 'poll/base.html' %}
+{% block nav_btn1 %}
+<a href="{% url 'home' %}"  type="button" class="btn btn-outline-light">home</a>
+{% endblock nav_btn1 %}
+
+
+{% block title %}
+    Vote
+{% endblock title %}
+
+{% block main %}
+
+<div class="container my-4">
+    <form  method="Post" >
+        {% csrf_token %}
+      <p>{{poll.question}}</p>
+      <input type="radio" id="option1" name="option" value="option1">
+      <label for="option1">{{poll.option_one}}</label><br>
+      <input type="radio" id="option2" name="option" value="option2">
+      <label for="option2">{{poll.option_two}}</label><br>
+      <input type="radio" id="option3" name="option" value="option3">
+      <label for="option3">{{poll.option_three}}</label>
+        <br>
+      <input type="submit" value="Submit">
+    </form>
+
+</div>
+
+{% endblock main %}

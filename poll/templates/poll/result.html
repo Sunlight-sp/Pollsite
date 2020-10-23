@@ -1,0 +1,17 @@
+{% extends 'poll/base.html' %}
+{% block nav_btn1 %}
+<a href="{% url 'home' %}"  type="button" class="btn btn-outline-light">home</a>
+{% endblock nav_btn1 %}
+
+
+{% block title %}
+    Result
+{% endblock title %}
+
+{% block main %}
+    <p>{{poll.question}}</p>
+    <p>{{poll.option_one}} : {{perc1}}</p>
+    <p>{{poll.option_two}} : {{perc2}}</p>
+    <p>{{poll.option_three}} : {{perc3}}</p>
+
+{% endblock main %}
